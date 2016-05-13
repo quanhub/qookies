@@ -1,0 +1,23 @@
+{
+  "name": "qookies",
+  "version": "1.0.0",
+  "description": "A simple jquery plugin to inform about that your site uses cookies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quanhub/qookies.git"
+  },
+  "keywords": [
+    "jquery",
+    "cookies"
+  ],
+  "author": "quan.borapas@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quanhub/qookies/issues"
+  },
+  "homepage": "https://github.com/quanhub/qookies#readme"
+}
