@@ -1,0 +1,119 @@
+@import 'conf';
+
+.qookies-theme-default {
+  color: $text-color;
+  border: $border-weight $border-style $border-color;
+  border-radius: 3px;
+  background-color: $bg-color;
+  box-shadow: $shadow;
+
+  font-size: $font-size;
+  line-height: $line-height;
+
+
+  .qookies__header {
+    color: $text-color;
+    h1 {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .qookies__description {
+    color: $text-color;
+    p {
+      margin: 0;
+    }
+    p + p {
+      margin-top: 10px;
+    }
+  }
+
+  .qookies__btn  {
+    display: inline-block;
+
+    margin: 5px 0;
+    padding: 10px;
+
+    cursor: pointer;
+    transition: $transition;
+    text-decoration: none;
+
+    color: $text-color;
+    border: 2px solid $btn-color-border;
+    border-radius: 3px;
+
+    &:hover {
+      transition: $transition;
+
+      color: $btn-color-hover;
+      background-color: $btn-background-hover;
+    }
+  }
+
+  .qookies__link {
+    a {
+      display: inline-block;
+
+      padding: 9px 0;
+
+      text-decoration: none;
+
+      color: $text-color;
+
+      font-weight: bold;
+    }
+  }
+}
+
+.qookies--bottom {
+
+  .qookies__content {
+    float: left;
+    width: 65%;
+  }
+
+  .qookies__footer {
+    float: right;
+    width: 30%;
+    padding-top: 20px;
+    padding-right: 2.5%;
+    text-align: right;
+  }
+
+  .qookies__description {
+    p + p {
+      margin-top: 0;
+    }
+  }
+
+  .qookies__link {
+
+    display: inline;
+
+    a {
+
+      display: inline-block;
+      font-weight: normal;
+
+      margin: 5px;
+      padding: 10px;
+
+      cursor: pointer;
+      transition: $transition;
+      text-decoration: none;
+
+      color: $text-color;
+      border: 2px solid $btn-color-border;
+      border-radius: 3px;
+
+      &:hover {
+        transition: $transition;
+
+        color: $btn-color-hover;
+        background-color: $btn-background-hover;
+      }
+    }
+  }
+
+}
