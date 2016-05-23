@@ -1,0 +1,9 @@
+$bg-color: #011627;
+$text-color: #E71D36;
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: 23px;
+  background-image: url('../img/bg-body.png');
+}
