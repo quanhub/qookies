@@ -8,9 +8,12 @@ var browserSync = require('browser-sync');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var autoprefixer = require('gulp-autoprefixer');
+var uglify = require('gulp-uglify');
+var cssnano = require('gulp-cssnano');
 
 var src = './src/';
-var dest = './build/';
+var dest = './min/';
+
 function customPlumber(errTitle) {
   return plumber({
     errorHandler: notify.onError({
@@ -22,11 +25,9 @@ function customPlumber(errTitle) {
 }
 
 gulp.task('browserSync', ['sass'], function(){
-
   browserSync({
     proxy: 'qooki.es/'
   });
-
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
@@ -48,14 +49,27 @@ gulp.task('sass', function(){
   }));
 });
 
-gulp.task('libs', function(){
-  return gulp.src([
-    'bower_components/jquery/dist/jquery.min.js',
-    'bower_components/js-cookie/src/js-cookie.js',
-  ])
-  .pipe(gulpif('*.js', gulp.dest(dest + 'js/libs/')))
-  .pipe(gulpif('*.css', gulp.dest(dest + 'css/libs/')));
+gulp.task('minify:js', function(){
+  return gulp.src(src + 'js/qookies.js')
+  .pipe(uglify())
+  .pipe(gulp.dest(dest + 'js/'));
 });
+
+gulp.task('minify:scss', function(){
+  return gulp.src([
+    src + 'scss/qk-default.scss',
+    src + 'scss/qk-theme-default.scss'
+  ])
+  .pipe(customPlumber('Error running sass'))
+  .pipe(sass())
+  .pipe(autoprefixer({
+    browser: [ 'ie 8-9', 'last 2 versions' ]
+  }))
+  .pipe(cssnano())
+  .pipe(gulp.dest(dest + 'css/'));
+});
+
+gulp.task('minify', sequence('minify:scss', 'minify:js'));
 
 gulp.task('html', function(){
   return gulp.src(src + '*.html')
@@ -67,4 +81,4 @@ gulp.task('js', function(){
     .pipe(gulp.dest(dest));
 });
 
-gulp.task('default', sequence(['watch', 'libs', 'html']));
+gulp.task('default', sequence(['watch', 'html']));
