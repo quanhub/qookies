@@ -50,7 +50,10 @@ gulp.task('sass', function(){
 });
 
 gulp.task('minify:js', function(){
-  return gulp.src(src + 'js/qookies.js')
+  return gulp.src([
+    src + 'js/qookies.js',
+    src + '**/*.js'
+  ])
   .pipe(uglify())
   .pipe(gulp.dest(dest + 'js/'));
 });
