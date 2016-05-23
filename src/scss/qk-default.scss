@@ -1,0 +1,46 @@
+$width: 300px !default;
+$padding: 20px !default;
+
+
+.qookies {
+  box-sizing: border-box;
+  padding: $padding;
+  position: absolute;
+  width: $width;
+
+  &--bottom-right {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  &--bottom {
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+  }
+
+  &--bottom-left {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  &--top-right {
+    right: 20px;
+    top: 20px;
+  }
+
+  &--top-left {
+    left: 20px;
+    top: 20px;
+  }
+
+  &--centered {
+    height: 350px;
+    margin-left: -250px;
+    margin-top: -175px;
+    top: 50%;
+    width: 500px;
+  }
+
+}

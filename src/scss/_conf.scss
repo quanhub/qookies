@@ -1,0 +1,23 @@
+$bg-color: #fff !default;
+$bg-color-dark: darken($bg-color, 10%) !default;
+
+$font-size: 14px !default;
+$line-height: 1.4 !default;
+
+$border-weight: 2px !default;
+$border-style: solid !default;
+$border-color: #fff !default;
+
+$text-color: #333 !default;
+
+$btn-color: $bg-color-dark !default;
+$btn-color-hover: $bg-color !default;
+$btn-background: $bg-color;
+$btn-background-hover: $text-color !default;
+$btn-color-border: $text-color !default;
+
+
+$shadow-color: rgba(0, 0, 0, .2) !default;
+$shadow: 0 4px 4px $shadow-color !default;
+
+$transition: all .3s ease-in;
