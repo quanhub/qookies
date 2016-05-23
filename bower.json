@@ -3,7 +3,7 @@
   "homepage": "https://github.com/quanhub/qookies",
   "repository": {
     "type": "git",
-    "url": "https://github.com/quanhub/qookies"
+    "url": "https://github.com/quanhub/qookies.git"
   },
   "authors": [
     "quan <quan.borapas@gmail.com>"
