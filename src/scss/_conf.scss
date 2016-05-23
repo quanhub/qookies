@@ -16,6 +16,8 @@ $btn-background: $bg-color;
 $btn-background-hover: $text-color !default;
 $btn-color-border: $text-color !default;
 
-$shadow: 0 4px 4px rgba(0, 0, 0, .2) !default;
+
+$shadow-color: rgba(0, 0, 0, .2) !default;
+$shadow: 0 4px 4px $shadow-color !default;
 
 $transition: all .3s ease-in;
