@@ -52,7 +52,8 @@ gulp.task('sass', function(){
 gulp.task('minify:js', function(){
   return gulp.src([
     src + 'js/qookies.js',
-    src + '**/*.js'
+    src + '**/*.js',
+    'bower_components/js-cookie/src/js.cookie.js'
   ])
   .pipe(uglify())
   .pipe(gulp.dest(dest + 'js/'));
