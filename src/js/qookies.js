@@ -2,6 +2,10 @@
 
   $.fn.qookies = function(options){
 
+    if(typeof(lang) === 'undefined') {
+      throw new Error("Lang is not defined!");
+    }
+
     var $settings = $.extend({
       theme: 'theme-default',
       position: 'bottom-right',
@@ -9,11 +13,12 @@
       path: '/',
       value: '1',
       cookieName: 'qookies-accepted',
+      link: {
+        text: lang.link.text,
+        url: lang.link.url
+      },
     }, options);
 
-    if(typeof(lang) === 'undefined') {
-      throw new Error("Lang is not defined!");
-    }
 
     var $mainContainer = $(this);
     $mainContainer.hide();
@@ -40,7 +45,7 @@
     $h1.html(lang.title).appendTo($header);
     $description.html(lang.description);
 
-    $link.html(lang.link.text).attr('href', lang.link.url).appendTo($linkContainer);
+    $link.html($settings.link.text).attr('href', $settings.link.url).appendTo($linkContainer);
 
     $innerContent.append($header, $description);
     $linkContainer.appendTo($footer);
