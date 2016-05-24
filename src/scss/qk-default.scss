@@ -5,7 +5,7 @@ $padding: 20px !default;
 .qookies {
   box-sizing: border-box;
   padding: $padding;
-  position: absolute;
+  position: fixed;
   width: $width;
 
   &--bottom-right {
